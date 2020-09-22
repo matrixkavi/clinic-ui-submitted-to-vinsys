@@ -1,0 +1,21 @@
+<h2>Employee Details</h2>
+
+<hr/>
+<div *ngIf="appointment">
+  <div>
+    <label><b>Name Of Doctor: </b></label> {{appointment.doctorname}}
+  </div>
+  <div>
+    <label><b>Name Of Patient: </b></label> {{appointment.patientname}}
+  </div>
+  <div>
+    <label><b>Day Of Appointment: </b></label> {{appointment.day}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Appointments List</button><br>
+
+
+

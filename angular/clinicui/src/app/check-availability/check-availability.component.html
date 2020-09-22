@@ -1,0 +1,37 @@
+<div [hidden]="submitted">
+  <h2>Check Doctor's Availability</h2>
+    <select [(ngModel)]="specialization">
+      <option value=""></option>
+      <option *ngFor="let s of speciality" [value]="s">
+        {{s}}
+      </option>
+    </select>
+    <br>
+   <br>
+<button type="submit" (click)="onSubmit()" class="btn btn-success">Submit</button>
+</div>
+
+
+<div [hidden]="!submitted" class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Doctors List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name Of Doctor</th>
+          <th>Specialization</th>
+          <th>Days Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doctor of doctors | async">
+          <td>{{doctor.name}}</td>
+          <td>{{doctor.specialization}}</td>
+          <td>{{doctor.days}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
